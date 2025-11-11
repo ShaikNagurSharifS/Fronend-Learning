@@ -16,6 +16,7 @@
     --card: #ffffff;
     --muted: #6b7280;
     --accent: #10b981;
+      --gold: #b8860b;
 
     background-color: var(--bg);
     color: var(--text);
@@ -51,7 +52,10 @@
   --card: #0b1220;
   --muted: #9CA3AF;
   --accent: #06b6d4;
+  --gold: #d4af37;
 }
+
+.gold { color: var(--gold); }
 
 .hero-animate {
   animation: fadeUp 700ms ease both;
@@ -75,4 +79,8 @@
   color: inherit;
 }
 .icon-btn:hover { background-color: rgba(255,255,255,0.03); }
+
+/* header hover helper: white bg and gold text on hover */
+.header-btn { transition: background-color 150ms ease, color 150ms ease; }
+.header-btn:hover { background-color: white; color: var(--gold); }
 

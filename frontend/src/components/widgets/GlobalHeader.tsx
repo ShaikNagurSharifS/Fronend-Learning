@@ -80,7 +80,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                             <a
                                 key={item.label}
                                 href={item.href}
-                                className={`inline-flex items-center px-3 py-2 rounded-full font-medium ${item.colorClass ?? ''} hover:opacity-90`}
+                                className={`inline-flex items-center px-3 py-2 rounded-full font-medium header-btn ${item.colorClass ?? ''}`}
                             >
                                 {item.icon}
                                 <span className="text-sm">{item.label}</span>
@@ -92,7 +92,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                     <div className="flex items-center space-x-4">
                         {/* Mobile menu button */}
                         <button
-                            className="md:hidden p-2 rounded-md hover:bg-gray-800"
+                            className="md:hidden p-2 rounded-md header-btn"
                             aria-label="Toggle menu"
                             aria-expanded={open}
                             onClick={() => setOpen((v) => !v)}
@@ -101,7 +101,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                         </button>
 
                         {/* Search icon */}
-                        <button aria-label="Search" className="p-2 rounded-md hover:bg-gray-800 hidden sm:inline-flex">
+                        <button aria-label="Search" className="p-2 rounded-md header-btn hidden sm:inline-flex">
                             <MagnifyingGlassIcon className="w-5 h-5 text-gray-200" />
                         </button>
 
@@ -109,19 +109,19 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                         <button
                             aria-label="Toggle dark mode"
                             onClick={() => setDark((v) => !v)}
-                            className="icon-btn btn-accent"
+                            className="icon-btn btn-accent header-btn"
                             style={{ backgroundColor: undefined }}
                         >
                             {dark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
                         </button>
 
-                        <a href="/login" className="text-sm text-gray-300 hover:underline hidden sm:inline">
+                        <a href="/login" className="text-sm text-gray-300 header-btn hidden sm:inline">
                             Login
                         </a>
 
                         <a
                             href="/signup"
-                            className="btn-accent inline-flex items-center text-sm text-white rounded-md shadow"
+                            className="btn-accent inline-flex items-center text-sm text-white rounded-md shadow header-btn"
                             style={{ backgroundColor: accentColor ?? 'var(--accent)' }}
                         >
                             Sign Up
