@@ -1,0 +1,26 @@
+/**
+ * Global Styles
+ * Import Tailwind CSS directives and custom base styles
+ */
+@import "tailwindcss";
+
+/* Custom base styles */
+@layer base {
+  :root {
+    /* Custom CSS variables */
+    --color-primary: #0ea5e9;
+    --color-secondary: #64748b;
+    --spacing-unit: 8px;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  /* Add custom component classes here */
+}
+
+/* Custom utility styles */
+@layer utilities {
+  /* Add custom utility classes here */
+}
