@@ -1,0 +1,79 @@
+.venv/
+node_modules/
+/dist
+/build
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Playwright
+.playwright/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# k6
+__k6_cache__/
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+*.code-workspace
+/.idea
+
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.mvn/
+.gradle/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+venv.bak/
+ENV/
+env/
+env.bak/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+
+# Selenium / test artifacts
+screenshots/
+test-output/
+reports/
+
+# CI
+.github/workflows/*.yml
+.circleci/
+/.husky/
+
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Misc
+*.tgz
+*.log

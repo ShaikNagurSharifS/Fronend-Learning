@@ -57,6 +57,28 @@
 
 .gold { color: var(--gold); }
 
+/* Color helpers and accents */
+.hero-gradient {
+  background: linear-gradient(90deg, #f59e0b, #ef4444 40%, #06b6d4 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.icon-circle { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; width: 2rem; height: 2rem; }
+.icon-circle.orange { background: linear-gradient(135deg,#fb923c,#fb7185); color: white; }
+.icon-circle.blue { background: linear-gradient(135deg,#60a5fa,#06b6d4); color: white; }
+.icon-circle.green { background: linear-gradient(135deg,#34d399,#10b981); color: white; }
+.icon-circle.yellow { background: linear-gradient(135deg,#f59e0b,#fbbf24); color: white; }
+.icon-circle.purple { background: linear-gradient(135deg,#8b5cf6,#7c3aed); color: white; }
+
+.card-accent { position: relative; overflow: hidden; }
+.card-accent::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg,var(--accent),rgba(255,255,255,0.06)); transform: translateX(-6px); transition: transform 220ms ease; }
+.card-accent:hover::before { transform: translateX(0); }
+
+.btn-gradient { background: linear-gradient(90deg,#06b6d4,#06b6d4 50%,#06b6d4); color: white; }
+.btn-gradient:hover { filter: brightness(1.05); transform: translateY(-2px); }
+
 .hero-animate {
   animation: fadeUp 700ms ease both;
 }
@@ -83,4 +105,12 @@
 /* header hover helper: white bg and gold text on hover */
 .header-btn { transition: background-color 150ms ease, color 150ms ease; }
 .header-btn:hover { background-color: white; color: var(--gold); }
+.header-btn:active,
+.header-btn:focus-visible { background-color: white; color: var(--gold); outline: none; }
+
+/* For touch devices that don't support hover, make header-btn highlight on tap */
+@media (hover: none) {
+  .header-btn { -webkit-tap-highlight-color: transparent; }
+  .header-btn:active { background-color: white; color: var(--gold); }
+}
 

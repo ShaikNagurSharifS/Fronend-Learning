@@ -49,11 +49,14 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
 
     React.useEffect(() => {
         const root = document.documentElement
+        const body = document.body
         if (dark) {
             root.classList.add('dark')
+            body.classList.add('dark')
             safeLocalSet('theme', 'dark')
         } else {
             root.classList.remove('dark')
+            body.classList.remove('dark')
             safeLocalSet('theme', 'light')
         }
     }, [dark])
@@ -112,7 +115,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                             className="icon-btn btn-accent header-btn"
                             style={{ backgroundColor: undefined }}
                         >
-                            {dark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+                            {dark ? <SunIcon className="w-5 h-5 text-yellow-300" /> : <MoonIcon className="w-5 h-5 text-white" />}
                         </button>
 
                         <a href="/login" className="text-sm text-gray-300 header-btn hidden sm:inline">
@@ -121,8 +124,8 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
 
                         <a
                             href="/signup"
-                            className="btn-accent inline-flex items-center text-sm text-white rounded-md shadow header-btn"
-                            style={{ backgroundColor: accentColor ?? 'var(--accent)' }}
+                            className="btn-gradient inline-flex items-center text-sm text-white rounded-md shadow header-btn"
+                            style={{ background: `linear-gradient(90deg, ${accentColor ?? '#06b6d4'}, ${accentColor ?? '#06b6d4'})` }}
                         >
                             Sign Up
                         </a>
@@ -139,7 +142,7 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                                 <a
                                     key={item.label}
                                     href={item.href}
-                                    className={`flex items-center px-3 py-2 rounded-md font-medium ${item.colorClass ?? 'text-gray-300'}`}
+                                    className={`flex items-center px-3 py-2 rounded-md font-medium header-btn ${item.colorClass ?? 'text-gray-300'}`}
                                     onClick={() => setOpen(false)}
                                 >
                                     {item.icon}
@@ -147,8 +150,8 @@ export const GlobalHeader: React.FC<GlobalHeaderProps> = ({
                                 </a>
                             ))}
                             <div className="pt-2 border-t">
-                                <a href="/login" className="block px-3 py-2 text-sm text-gray-300">Login</a>
-                                <a href="/signup" className="block px-3 py-2 mt-1 text-sm text-white rounded-md" style={{ backgroundColor: accentColor }}>Sign Up</a>
+                                <a href="/login" className="block px-3 py-2 text-sm text-gray-300 header-btn">Login</a>
+                                <a href="/signup" className="block px-3 py-2 mt-1 text-sm text-white rounded-md header-btn" style={{ backgroundColor: accentColor }}>Sign Up</a>
                             </div>
                         </div>
                     </div>
